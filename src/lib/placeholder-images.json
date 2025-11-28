@@ -1,0 +1,46 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "A stunning architectural building representing modern construction.",
+      "imageUrl": "/images/hero.jpg",
+      "imageHint": "modern architecture"
+    },
+    {
+      "id": "project-1",
+      "description": "A modern residential building with a unique facade.",
+      "imageUrl": "https://res.cloudinary.com/dy73hzkpm/image/upload/v1761308404/WhatsApp_Image_2025-10-24_at_13.11.41_v8une5.jpg",
+      "imageHint": "residential building"
+    },
+    {
+      "id": "project-2",
+      "description": "A large-scale commercial complex under construction.",
+      "imageUrl": "https://res.cloudinary.com/dy73hzkpm/image/upload/v1761308414/WhatsApp_Image_2025-10-24_at_13.11.41_1_j2pfrf.jpg",
+      "imageHint": "commercial complex"
+    },
+    {
+      "id": "project-3",
+      "description": "Interior finishing of a luxury apartment.",
+      "imageUrl": "https://i.postimg.cc/k5qNFkJK/Whats-App-Image-2025-09-06-at-20-59-04-1.jpg",
+      "imageHint": "luxury interior"
+    },
+    {
+      "id": "project-4",
+      "description": "Structural engineering work on a bridge.",
+      "imageUrl": "https://res.cloudinary.com/dy73hzkpm/image/upload/v1761308426/WhatsApp_Image_2025-10-24_at_13.11.41_2_sdqatv.jpg",
+      "imageHint": "apartment complex"
+    },
+    {
+      "id": "project-5",
+      "description": "A modern villa in Lubumbashi.",
+      "imageUrl": "https://res.cloudinary.com/dy73hzkpm/image/upload/v1761308025/WhatsApp_Image_2025-10-24_at_13.11.40_crvnm3.jpg",
+      "imageHint": "modern villa"
+    },
+    {
+      "id": "mobile-app",
+      "description": "A smartphone showcasing the Luquav construction management app.",
+      "imageUrl": "/images/mobile-app.png",
+      "imageHint": "smartphone app"
+    }
+  ]
+}

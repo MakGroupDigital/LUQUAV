@@ -1,0 +1,11 @@
+# The name of the script in package.json that will run your app.
+run: npm run start
+# The name of the script in package.json that will build your app.
+build:
+  # The command that installs all of your dependencies.
+  fetch: npm install
+  # The command that builds your app.
+  build: npm run build
+runConfig:
+  # The maximum number of concurrent requests your app can handle.
+  maxInstances: 1

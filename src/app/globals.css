@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%; /* #192842 - Bleu Nuit */
+    --foreground: 0 0% 94%; /* #F0F0F0 - Blanc cassé */
+    
+    --card: 222 47% 15%;
+    --card-foreground: 0 0% 94%;
+    
+    --popover: 222 47% 11%;
+    --popover-foreground: 0 0% 94%;
+    
+    --primary: 33 100% 50%; /* #FF8C00 - Orange très saturé */
+    --primary-foreground: 222 47% 11%;
+    
+    --secondary: 210 80% 60%; /* #3B82F6 - Bleu Clair */
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 222 47% 18%; /* Nuance de bleu pour fonds discrets */
+    --muted-foreground: 0 0% 80%;
+    
+    --accent: 33 100% 55%; /* Variante de l'orange pour les hover effects */
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 222 47% 21%;
+    --input: 222 47% 21%;
+    --ring: 33 100% 50%;
+    
+    --radius: 0.75rem;
+
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 0 0% 94%;
+    
+    --card: 222 47% 15%;
+    --card-foreground: 0 0% 94%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 0 0% 94%;
+    
+    --primary: 33 100% 50%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 210 80% 60%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 222 47% 18%;
+    --muted-foreground: 0 0% 80%;
+
+    --accent: 33 100% 55%;
+    --accent-foreground: 222 47% 11%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 222 47% 21%;
+    --input: 222 47% 21%;
+    --ring: 33 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
