@@ -122,13 +122,47 @@ export default function ProjectForm() {
     }
   }, [state, form, toast]);
 
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    // Valider le formulaire avec react-hook-form
+    const isValid = await form.trigger();
+    if (!isValid) {
+      return;
+    }
+    
+    const formData = new FormData();
+    const values = form.getValues();
+    
+    // Ajouter tous les champs au FormData
+    Object.entries(values).forEach(([key, value]) => {
+      if (key === 'planFile' || key === 'otherFile') {
+        // Les fichiers sont déjà des File objects
+        if (value instanceof File) {
+          formData.append(key, value);
+        }
+      } else if (key === 'services' && Array.isArray(value)) {
+        // Pour les services (array), ajouter chaque élément
+        value.forEach((service) => {
+          formData.append('services', service);
+        });
+      } else if (value !== undefined && value !== null && value !== '') {
+        // Pour les autres champs
+        formData.append(key, String(value));
+      }
+    });
+    
+    // Soumettre le formulaire avec le FormData
+    formAction(formData);
+  };
+
   return (
     <Card className="shadow-lg bg-card text-card-foreground border-border">
       <CardContent className="p-6 md:p-8">
         <Form {...form}>
           <form
             ref={formRef}
-            action={formAction}
+            onSubmit={onSubmit}
             className="space-y-8"
           >
             <fieldset>
