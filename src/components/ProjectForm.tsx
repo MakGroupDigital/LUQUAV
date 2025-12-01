@@ -141,14 +141,21 @@ export default function ProjectForm() {
         if (value instanceof File) {
           formData.append(key, value);
         }
-      } else if (key === 'services' && Array.isArray(value)) {
+      } else if (key === 'services') {
         // Pour les services (array), ajouter chaque élément
-        value.forEach((service) => {
-          formData.append('services', service);
-        });
-      } else if (value !== undefined && value !== null && value !== '') {
-        // Pour les autres champs
-        formData.append(key, String(value));
+        if (Array.isArray(value) && value.length > 0) {
+          value.forEach((service) => {
+            formData.append('services', service);
+          });
+        }
+      } else {
+        // Pour les autres champs, inclure même les valeurs vides pour les champs optionnels
+        if (value !== undefined && value !== null) {
+          formData.append(key, String(value));
+        } else if (key === 'area' || key === 'rooms') {
+          // Les champs area et rooms peuvent être vides
+          formData.append(key, '');
+        }
       }
     });
     
