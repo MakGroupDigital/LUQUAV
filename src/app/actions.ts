@@ -4,7 +4,7 @@
 import { Resend } from 'resend';
 import { contactSchema, projectFormSchema, partnerFormSchema } from "@/lib/schemas";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY || 're_5yCuBYgn_4b1tjzVRLyGoP8j48BzPmPxj');
 
 export type FormState = {
   message: string;
