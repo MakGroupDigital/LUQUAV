@@ -11,7 +11,7 @@ export const size = {
 
 export const contentType = 'image/png';
 
-// Image generation - Logo LUQUAV simplifié
+// Image generation - Logo LUQUAV basé sur le logo existant
 export default function Icon() {
   return new ImageResponse(
     (
@@ -26,40 +26,26 @@ export default function Icon() {
           position: 'relative',
         }}
       >
-        {/* Forme L grise à gauche */}
-        <div
+        {/* Logo LUQUAV simplifié pour favicon */}
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 160 80"
           style={{
             position: 'absolute',
-            left: '2px',
-            width: '12px',
-            height: '28px',
-            background: '#808080',
-            clipPath: 'polygon(0 0, 100% 0, 60% 100%, 0 100%)',
-          }}
-        />
-        {/* Forme U orange à droite */}
-        <div
-          style={{
-            position: 'absolute',
-            right: '2px',
-            width: '12px',
-            height: '28px',
-            background: '#ff6b35',
-            clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 0 100%)',
-          }}
-        />
-        {/* Texte LU centré */}
-        <div
-          style={{
-            color: '#ffffff',
-            fontSize: '14px',
-            fontWeight: 'bold',
-            fontFamily: 'system-ui',
-            letterSpacing: '-0.5px',
           }}
         >
-          LU
-        </div>
+          {/* Forme L grise */}
+          <path
+            d="M80 0L40 40L80 80L120 40L80 0Z"
+            fill="#808080"
+          />
+          {/* Forme U orange */}
+          <path
+            d="M120 40L80 0V80L120 40Z"
+            fill="#ff6b35"
+          />
+        </svg>
       </div>
     ),
     {

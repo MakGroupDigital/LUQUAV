@@ -1,0 +1,23 @@
+<svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="80" fill="#000000"/>
+  <path
+    d="M80 0L40 40L80 80L120 40L80 0Z"
+    fill="#808080"
+  />
+  <path
+    d="M120 40L80 0V80L120 40Z"
+    fill="#ff6b35"
+  />
+  <text
+    x="80"
+    y="45"
+    fontFamily="Poppins, sans-serif"
+    fontSize="20"
+    fontWeight="bold"
+    fill="white"
+    textAnchor="middle"
+  >
+    LUQUAV
+  </text>
+</svg>
+

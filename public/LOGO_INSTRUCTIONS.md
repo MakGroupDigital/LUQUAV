@@ -30,3 +30,5 @@ Une fois les fichiers ajoutés, le logo s'affichera automatiquement :
 - Lors des partages sur Facebook, Twitter, LinkedIn, etc.
 - Sur les appareils mobiles (iOS, Android)
 
+
+

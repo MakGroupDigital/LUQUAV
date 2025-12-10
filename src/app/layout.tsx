@@ -31,23 +31,32 @@ export const metadata: Metadata = {
         height: 630,
         alt: 'LUQUAV Sarl Logo',
       },
+      {
+        url: '/logo-og.svg',
+        width: 1200,
+        height: 630,
+        alt: 'LUQUAV Sarl - BIEN CHIFFRER, BIEN GERER, MIEUX BATIR',
+      },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'LUQUAV Sarl - BIEN CHIFFRER, BIEN GERER, MIEUX BATIR',
     description: 'Expertise en gestion de projets de construction. Plateforme numérique moderne pour la collecte de projets qualifiés et la promotion de notre application mobile.',
-    images: ['/logo.png'],
+    images: ['/logo.png', '/logo-og.svg'],
     creator: '@luquav',
   },
   icons: {
     icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/logo.svg', sizes: 'any', type: 'image/svg+xml' },
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/logo.svg', sizes: '180x180', type: 'image/svg+xml' },
     ],
     other: [
       { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#ff6b35' },
@@ -89,10 +98,12 @@ export default function RootLayout({
           rel="stylesheet"
         />
         {/* Favicons pour tous les navigateurs - Les métadonnées sont gérées par Next.js, mais on ajoute ces liens pour compatibilité */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/logo.svg" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#000000" />
         <meta name="msapplication-TileColor" content="#ff6b35" />
