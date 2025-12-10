@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const contactDetails = [
   {
     icon: MapPin,
-    text: "No 03, Av Miabi, Q Joli parc, C Ngaliema, Kinshasa",
+    text: "No 03, Av Miabi, Q Lukunga, C Ngaliema, Kinshasa",
   },
   {
     icon: Phone,
