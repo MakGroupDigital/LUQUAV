@@ -1,36 +1,5 @@
-<svg viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
   <rect width="1200" height="630" fill="#000000"/>
-  <g transform="translate(400, 165) scale(2.5)">
-    <path
-      d="M80 0L40 40L80 80L120 40L80 0Z"
-      fill="#808080"
-    />
-    <path
-      d="M120 40L80 0V80L120 40Z"
-      fill="#ff6b35"
-    />
-    <text
-      x="80"
-      y="45"
-      fontFamily="Poppins, sans-serif"
-      fontSize="20"
-      fontWeight="bold"
-      fill="white"
-      textAnchor="middle"
-    >
-      LUQUAV
-    </text>
-  </g>
-  <text
-    x="600"
-    y="500"
-    fontFamily="Poppins, sans-serif"
-    fontSize="48"
-    fontWeight="bold"
-    fill="white"
-    textAnchor="middle"
-  >
-    BIEN CHIFFRER, BIEN GERER, MIEUX BATIR
-  </text>
+  <image href="/logoluquav.png" x="400" y="165" width="400" height="300" preserveAspectRatio="xMidYMid meet"/>
 </svg>
-

@@ -8,12 +8,12 @@ export default function Hero() {
   return (
     <section className="relative h-[80vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden text-center text-white">
       <Image
-        src="https://i.postimg.cc/dV8mCqYs/Whats-App-Image-2025-09-06-at-20-57-06-2.jpg"
-        alt="Chantier de construction"
+        src="/hero.jpg"
+        alt="LUQUAV - La construction du futur"
         fill
         className="object-cover opacity-20"
         priority
-        data-ai-hint="construction site"
+        data-ai-hint="LUQUAV construction"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
       <div className="relative z-10 max-w-4xl mx-auto px-4">

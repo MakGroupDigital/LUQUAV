@@ -31,19 +31,13 @@ export const metadata: Metadata = {
         height: 630,
         alt: 'LUQUAV Sarl Logo',
       },
-      {
-        url: '/logo-og.svg',
-        width: 1200,
-        height: 630,
-        alt: 'LUQUAV Sarl - BIEN CHIFFRER, BIEN GERER, MIEUX BATIR',
-      },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'LUQUAV Sarl - BIEN CHIFFRER, BIEN GERER, MIEUX BATIR',
     description: 'Expertise en gestion de projets de construction. Plateforme numérique moderne pour la collecte de projets qualifiés et la promotion de notre application mobile.',
-    images: ['/logo.png', '/logo-og.svg'],
+    images: ['/logo.png'],
     creator: '@luquav',
   },
   icons: {
@@ -97,17 +91,18 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap"
           rel="stylesheet"
         />
-        {/* Favicons pour tous les navigateurs - Les métadonnées sont gérées par Next.js, mais on ajoute ces liens pour compatibilité */}
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="apple-touch-icon" href="/logo.svg" />
-        <link rel="manifest" href="/manifest.json" />
+        {/* Favicons pour tous les navigateurs - Forcer le rafraîchissement avec timestamp */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=2" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
+        <link rel="manifest" href="/manifest.json?v=2" />
         <meta name="theme-color" content="#000000" />
         <meta name="msapplication-TileColor" content="#ff6b35" />
-        <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+        <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=2" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
       </head>
       <body className="font-body antialiased bg-background text-foreground">
         <Header />
