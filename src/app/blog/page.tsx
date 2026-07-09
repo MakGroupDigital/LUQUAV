@@ -1,5 +1,20 @@
 
 import { Newspaper } from "lucide-react";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Blog construction, BTP et gestion de chantier",
+  description:
+    "Articles, conseils et analyses LUQUAV sur la construction, le BTP, l'économie de construction, le planning, le suivi de chantier et les projets immobiliers en RDC.",
+  path: "/blog",
+  keywords: [
+    "blog construction RDC",
+    "conseils BTP",
+    "actualité construction Kinshasa",
+    "gestion chantier conseils",
+    "économie de construction",
+  ],
+});
 
 export default function BlogPage() {
   return (

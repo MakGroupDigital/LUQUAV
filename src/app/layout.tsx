@@ -6,12 +6,16 @@ import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsAppButton from "@/components/FloatingWhatsAppButton";
+import { defaultKeywords, organizationJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "LUQUAV Sarl - BIEN CHIFFRER, BIEN GERER, MIEUX BATIR",
+  title: {
+    default: "LUQUAV SARL | Construction, BTP et gestion de projets en RDC",
+    template: "%s | LUQUAV SARL",
+  },
   description:
-    "Expertise en gestion de projets de construction. Plateforme numérique moderne pour la collecte de projets qualifiés et la promotion de notre application mobile.",
-  keywords: ["construction", "gestion de projets", "LUQUAV", "Kinshasa", "RD Congo", "bâtiment"],
+    "LUQUAV SARL accompagne les projets de construction, BTP, études de prix, économie de construction, pilotage de chantier, ressources et maintenance technique à Kinshasa et en RDC.",
+  keywords: defaultKeywords,
   authors: [{ name: "LUQUAV Sarl" }],
   creator: "LUQUAV Sarl",
   publisher: "LUQUAV Sarl",
@@ -24,8 +28,8 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     url: '/',
     siteName: 'LUQUAV Sarl',
-    title: 'LUQUAV Sarl - BIEN CHIFFRER, BIEN GERER, MIEUX BATIR',
-    description: 'Expertise en gestion de projets de construction. Plateforme numérique moderne pour la collecte de projets qualifiés et la promotion de notre application mobile.',
+    title: 'LUQUAV SARL | Construction, BTP et gestion de projets en RDC',
+    description: 'Construction, BTP, étude de prix, économie de construction, pilotage et suivi de chantier à Kinshasa et en RDC.',
     images: [
       {
         url: '/logo.png',
@@ -37,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LUQUAV Sarl - BIEN CHIFFRER, BIEN GERER, MIEUX BATIR',
-    description: 'Expertise en gestion de projets de construction. Plateforme numérique moderne pour la collecte de projets qualifiés et la promotion de notre application mobile.',
+    title: 'LUQUAV SARL | Construction, BTP et gestion de projets en RDC',
+    description: 'Construction, BTP, étude de prix, économie de construction, pilotage et suivi de chantier à Kinshasa et en RDC.',
     images: ['/logo.png'],
     creator: '@luquav',
   },
@@ -105,6 +109,12 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#ff6b35" />
         <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=2" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
       </head>
       <body className="font-body antialiased bg-background text-foreground">
         <ThemeProvider defaultTheme="light" storageKey="luquav-theme">

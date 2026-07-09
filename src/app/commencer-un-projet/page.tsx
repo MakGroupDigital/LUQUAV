@@ -1,4 +1,19 @@
 import ProjectForm from "@/components/ProjectForm";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Commencer un projet de construction à Kinshasa",
+  description:
+    "Soumettez votre projet de construction à LUQUAV SARL: maison, immeuble, commerce, rénovation, entrepôt ou chantier complexe avec accompagnement professionnel en RDC.",
+  path: "/commencer-un-projet",
+  keywords: [
+    "commencer projet construction",
+    "devis construction Kinshasa",
+    "projet maison RDC",
+    "construction immeuble Kinshasa",
+    "demande accompagnement BTP",
+  ],
+});
 
 export default function CommencerUnProjetPage() {
   return (

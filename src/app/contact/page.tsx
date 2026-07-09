@@ -3,6 +3,21 @@ import ContactForm from "@/components/ContactForm";
 import PartnerForm from "@/components/PartnerForm";
 import MapSection from "@/components/sections/MapSection";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Contact LUQUAV SARL pour construction et BTP",
+  description:
+    "Contactez LUQUAV SARL à Kinshasa pour un projet de construction, une étude de prix, un besoin de prestataire BTP, un partenariat ou un suivi de chantier.",
+  path: "/contact",
+  keywords: [
+    "contact entreprise construction Kinshasa",
+    "contact BTP RDC",
+    "prestataire BTP Kinshasa",
+    "partenaire construction RDC",
+    "devis chantier Kinshasa",
+  ],
+});
 
 export default function ContactPage() {
   return (

@@ -1,6 +1,21 @@
 import { CheckCircle, Clock } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Application LUQUAV pour suivi de chantier",
+  description:
+    "Découvrez l'application LUQUAV pour suivre les chantiers, coordonner les ressources, documenter les étapes et améliorer la transparence des projets de construction.",
+  path: "/telecharger",
+  keywords: [
+    "application suivi chantier",
+    "application BTP RDC",
+    "gestion chantier mobile",
+    "suivi construction temps réel",
+    "LUQUAV app",
+  ],
+});
 
 export default function DownloadPage() {
   const benefits = [

@@ -1,3 +1,13 @@
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+    title: "Politique de confidentialité",
+    description:
+        "Consultez la politique de confidentialité de LUQUAV SARL concernant la collecte, l'utilisation et la protection des données sur le site.",
+    path: "/politique-confidentialite",
+    keywords: ["politique confidentialité LUQUAV", "données personnelles LUQUAV"],
+});
+
 export default function PolitiqueConfidentialitePage() {
     return (
         <div className="bg-background text-foreground">

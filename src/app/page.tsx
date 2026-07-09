@@ -9,6 +9,21 @@ import MapSection from "@/components/sections/MapSection";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Entreprise de construction et gestion de projets BTP en RDC",
+  description:
+    "LUQUAV SARL accompagne vos projets de construction à Kinshasa et en RDC: études de prix, économie de construction, pilotage de chantier, ressources, prestataires et maintenance.",
+  path: "/",
+  keywords: [
+    "construction RDC",
+    "entreprise BTP Kinshasa",
+    "chantier Kinshasa",
+    "trouver un prestataire BTP",
+    "commencer un projet construction",
+  ],
+});
 
 export default function Home() {
   return (

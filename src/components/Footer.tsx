@@ -129,7 +129,7 @@ export default function Footer() {
           <p className="mt-2">
             Powered by{" "}
             <a 
-              href="https://www.charmant-nyungu.com" 
+              href="https://www.charmantnyungu.com" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-primary font-semibold hover:underline link-modern"

@@ -1,5 +1,21 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { DollarSign, Users, GanttChartSquare, CheckCircle } from "lucide-react";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Services BTP, études de prix et pilotage de chantier",
+  description:
+    "Découvrez les services LUQUAV: construction générale, études de prix, économie de construction, planning, gestion de ressources, logistique, suivi et pilotage de chantier.",
+  path: "/services",
+  keywords: [
+    "services BTP RDC",
+    "étude de prix construction",
+    "économie de construction Kinshasa",
+    "pilotage de chantier",
+    "gestion ressources BTP",
+    "logistique chantier",
+  ],
+});
 
 const servicesData = [
   {

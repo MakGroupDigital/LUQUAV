@@ -5,6 +5,21 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+    title: "À propos de LUQUAV SARL, expert construction et BTP",
+    description:
+        "Découvrez LUQUAV SARL, son histoire, son équipe et sa méthode pour professionnaliser la construction, le BTP, le suivi de chantier et la gestion de projets en RDC.",
+    path: "/a-propos",
+    keywords: [
+        "LUQUAV SARL",
+        "expert construction RDC",
+        "entreprise construction Kinshasa",
+        "gestion chantier RDC",
+        "professionnalisation BTP",
+    ],
+});
 
 const team = [
     { name: "Adamu MUPEPE", role: "Fondateur / PDG", avatar: "https://res.cloudinary.com/dy73hzkpm/image/upload/v1761306107/f31ec427-32b4-44b7-8092-1b75f2580a9a_prhgm1.jpg" },

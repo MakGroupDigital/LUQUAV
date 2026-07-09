@@ -1,3 +1,13 @@
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+    title: "Conformité RGPD et protection des données",
+    description:
+        "Engagement de LUQUAV SARL pour la protection des données, la transparence et les principes RGPD appliqués aux utilisateurs et partenaires.",
+    path: "/reglement-rgpd",
+    keywords: ["RGPD LUQUAV", "protection données LUQUAV", "conformité données RDC"],
+});
+
 export default function ReglementRGPDPage() {
     return (
         <div className="bg-background text-foreground">

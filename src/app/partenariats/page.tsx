@@ -2,6 +2,21 @@ import { Building, Globe, Award, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+    title: "Partenariats BTP, fournisseurs et accréditations",
+    description:
+        "LUQUAV SARL développe un réseau de partenaires BTP fiables: fournisseurs de matériaux, bureaux d'études, logisticiens, experts techniques et acteurs de construction.",
+    path: "/partenariats",
+    keywords: [
+        "partenariat BTP RDC",
+        "fournisseur matériaux construction",
+        "bureau d'études Kinshasa",
+        "accréditations construction",
+        "partenaires construction RDC",
+    ],
+});
 
 export default function PartenariatsPage() {
     return (

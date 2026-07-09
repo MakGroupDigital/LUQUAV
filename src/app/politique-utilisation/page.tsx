@@ -1,3 +1,13 @@
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+    title: "Politique d'utilisation",
+    description:
+        "Conditions d'utilisation du site LUQUAV SARL, entreprise spécialisée dans la construction, le BTP et la gestion de projets en RDC.",
+    path: "/politique-utilisation",
+    keywords: ["conditions utilisation LUQUAV", "politique site LUQUAV"],
+});
+
 export default function PolitiqueUtilisationPage() {
     return (
         <div className="bg-background text-foreground">
