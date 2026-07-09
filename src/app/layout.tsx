@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./improved-styles.css";
+import { ThemeProvider } from "@/lib/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -79,7 +81,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className="!scroll-smooth dark">
+    <html lang="fr" className="!scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -99,17 +101,19 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=2" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
         <link rel="manifest" href="/manifest.json?v=2" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#ffffff" />
         <meta name="msapplication-TileColor" content="#ff6b35" />
         <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=2" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
       </head>
       <body className="font-body antialiased bg-background text-foreground">
-        <Header />
-        <main className="bg-background">{children}</main>
-        <Footer />
-        <FloatingWhatsAppButton />
-        <Toaster />
+        <ThemeProvider defaultTheme="light" storageKey="luquav-theme">
+          <Header />
+          <main className="bg-background">{children}</main>
+          <Footer />
+          <FloatingWhatsAppButton />
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

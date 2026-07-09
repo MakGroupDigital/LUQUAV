@@ -16,6 +16,7 @@ import {
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
+import { ThemeToggle } from "./ThemeToggle";
 
 const NAV_LINKS = [
   { href: "/", label: "Accueil" },
@@ -61,9 +62,12 @@ export default function Header() {
           </Link>
         )
       )}
-       <Button asChild className={`${isMobileMenu ? 'mt-4' : 'ml-4'}`}>
-        <Link href="/commencer-un-projet">Commencer un Projet</Link>
-      </Button>
+      <div className={`flex items-center gap-4 ${isMobileMenu ? 'mt-4' : 'ml-4'}`}>
+        <ThemeToggle />
+        <Button asChild>
+          <Link href="/commencer-un-projet">Commencer un Projet</Link>
+        </Button>
+      </div>
     </nav>
   );
 

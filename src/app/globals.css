@@ -4,32 +4,32 @@
 
 @layer base {
   :root {
-    --background: 222 47% 11%; /* #192842 - Bleu Nuit */
-    --foreground: 0 0% 94%; /* #F0F0F0 - Blanc cassé */
+    --background: 0 0% 100%; /* #FFFFFF - Blanc pur */
+    --foreground: 222 47% 11%; /* #192842 - Bleu Nuit */
     
-    --card: 222 47% 15%;
-    --card-foreground: 0 0% 94%;
+    --card: 0 0% 98%; /* #FAFAFA - Blanc cassé */
+    --card-foreground: 222 47% 11%;
     
-    --popover: 222 47% 11%;
-    --popover-foreground: 0 0% 94%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
     
     --primary: 33 100% 50%; /* #FF8C00 - Orange très saturé */
-    --primary-foreground: 222 47% 11%;
+    --primary-foreground: 0 0% 100%; /* Blanc */
     
     --secondary: 210 80% 60%; /* #3B82F6 - Bleu Clair */
-    --secondary-foreground: 0 0% 98%;
+    --secondary-foreground: 0 0% 100%;
     
-    --muted: 222 47% 18%; /* Nuance de bleu pour fonds discrets */
-    --muted-foreground: 0 0% 80%;
+    --muted: 210 20% 96%; /* #F8F9FA - Gris très clair */
+    --muted-foreground: 215 16% 47%; /* #6C757D - Gris moyen */
     
     --accent: 33 100% 55%; /* Variante de l'orange pour les hover effects */
-    --accent-foreground: 222 47% 11%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 222 47% 21%;
-    --input: 222 47% 21%;
+    --border: 214 32% 91%; /* #E5E7EB - Gris clair */
+    --input: 214 32% 91%;
     --ring: 33 100% 50%;
     
     --radius: 0.75rem;
@@ -42,8 +42,8 @@
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 0 0% 94%;
+    --background: 222 47% 11%; /* #192842 - Bleu Nuit */
+    --foreground: 0 0% 94%; /* #F0F0F0 - Blanc cassé */
     
     --card: 222 47% 15%;
     --card-foreground: 0 0% 94%;

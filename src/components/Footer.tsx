@@ -37,19 +37,19 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-background text-muted-foreground border-t border-border">
+    <footer className="bg-background text-muted-foreground border-t border-border glass-effect">
       <div className="container mx-auto px-4 md:px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and About */}
           <div className="flex flex-col">
             <Link href="/" aria-label="LUQUAV Sarl Home" className="mb-4 inline-block">
-              <Logo className="h-9 w-auto" />
+              <Logo className="h-9 w-auto hover:scale-105 transition-transform duration-300" />
             </Link>
-            <p className="text-sm">
+            <p className="text-sm italic">
               BIEN CHIFFRER, BIEN GERER, MIEUX BATIR.
             </p>
              <div className="mt-auto pt-4">
-                <h3 className="font-semibold text-foreground mb-4">Suivez-nous</h3>
+                <h3 className="font-semibold text-foreground mb-4 gradient-text">Suivez-nous</h3>
                 <div className="flex items-center gap-4">
                 {socialLinks.map((social) => (
                     <Link
@@ -58,7 +58,7 @@ export default function Footer() {
                     aria-label={social.label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10"
                     >
                     <social.icon className="h-5 w-5" />
                     </Link>
@@ -69,11 +69,11 @@ export default function Footer() {
 
           {/* Site Plan */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Plan du Site</h3>
+            <h3 className="font-semibold text-foreground mb-4 gradient-text">Plan du Site</h3>
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm hover:text-primary transition-colors">
+                  <Link href={link.href} className="text-sm hover:text-primary transition-colors link-modern">
                     {link.label}
                   </Link>
                 </li>
@@ -83,23 +83,23 @@ export default function Footer() {
 
           {/* Contact & Legal */}
           <div>
-             <h3 className="font-semibold text-foreground mb-4">Contact</h3>
+             <h3 className="font-semibold text-foreground mb-4 gradient-text">Contact</h3>
             <ul className="space-y-3 text-sm mb-6">
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Phone className="h-4 w-4 text-primary"/> 
                 <span>+243 82 807 3633</span>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Mail className="h-4 w-4 text-primary"/>
-                <a href="mailto:contact@luquav.com" className="hover:text-primary transition-colors">contact@luquav.com</a>
+                <a href="mailto:contact@luquav.com" className="link-modern">contact@luquav.com</a>
               </li>
             </ul>
 
-            <h3 className="font-semibold text-foreground mb-4">Légal</h3>
+            <h3 className="font-semibold text-foreground mb-4 gradient-text">Légal</h3>
             <ul className="space-y-2">
               {legalLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm hover:text-primary transition-colors">
+                  <Link href={link.href} className="text-sm hover:text-primary transition-colors link-modern">
                     {link.label}
                   </Link>
                 </li>
@@ -109,11 +109,11 @@ export default function Footer() {
 
           {/* Partners */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Partenariats</h3>
+            <h3 className="font-semibold text-foreground mb-4 gradient-text">Partenariats</h3>
             <ul className="space-y-2">
               {partnerLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm hover:text-primary transition-colors">
+                  <Link href={link.href} className="text-sm hover:text-primary transition-colors link-modern">
                     {link.label}
                   </Link>
                 </li>
@@ -122,12 +122,20 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-6 text-center text-sm">
-          <p>
+        <div className="border-t border-border/50 mt-8 pt-6 text-center text-sm">
+          <p className="fade-in-up">
             &copy; {new Date().getFullYear()} LUQUAV sarl. Tous droits réservés.
           </p>
           <p className="mt-2">
-            Powered by <a href="https://www.charmant-nyungu.com" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">M.charmant Nyungu K.</a>
+            Powered by{" "}
+            <a 
+              href="https://www.charmant-nyungu.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-primary font-semibold hover:underline link-modern"
+            >
+              M.charmant Nyungu K.
+            </a>
           </p>
         </div>
       </div>
