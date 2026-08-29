@@ -4,53 +4,32 @@ import { useState } from "react";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
-  DollarSign, Users, GanttChartSquare, HardHat, Truck, FileText, 
+  Compass, HardHat, Building2,
   ArrowRight
 } from "lucide-react";
 import Link from "next/link";
 
 const services = [
   {
-    icon: HardHat,
-    title: "Construction générale",
-    description: "Réalisation de tous types de bâtiments, de la conception à la livraison.",
+    icon: Compass,
+    title: "Montage & préparation",
+    description: "Nous transformons votre besoin en un projet faisable, chiffré, planifié et prêt à être exécuté.",
     color: "from-orange-500 to-amber-500",
-    features: ["Conception sur mesure", "Suivi en temps réel", "Livraison garantie"]
+    features: ["Cadrage et faisabilité", "Études et économie", "Appels d’offres", "Planification"]
   },
   {
-    icon: GanttChartSquare,
-    title: "Gestion complète de projet",
-    description: "Planification, coordination et suivi de toutes les étapes du chantier.",
+    icon: HardHat,
+    title: "Pilotage & gestion de chantier",
+    description: "Nous coordonnons l’exécution pour tenir les objectifs de qualité, de coût et de délai.",
     color: "from-blue-500 to-cyan-500",
-    features: ["Planning dynamique", "Coordination d'équipes", "Rapports détaillés"]
+    features: ["Organisation du chantier", "Gestion des ressources", "Contrôle qualité et coûts", "Audit et reporting"]
   },
   {
-    icon: DollarSign,
-    title: "Études techniques et conseil",
-    description: "Réalisation d'études, audits et recommandations pour préparer chaque projet.",
+    icon: Building2,
+    title: "Gestion technique du patrimoine",
+    description: "Nous préservons la valeur et la performance des ouvrages après leur livraison.",
     color: "from-emerald-500 to-teal-500",
-    features: ["Audits complets", "Recommandations expertes", "Optimisation budgétaire"]
-  },
-  {
-    icon: Users,
-    title: "Gestion de main-d'œuvre",
-    description: "Formation et suivi des techniciens pour garantir fiabilité et efficacité.",
-    color: "from-violet-500 to-purple-500",
-    features: ["Formation certifiée", "Suivi personnalisé", "Évaluation continue"]
-  },
-  {
-    icon: Truck,
-    title: "Logistique et approvisionnement",
-    description: "Organisation des matériaux et équipements pour optimiser les délais.",
-    color: "from-rose-500 to-pink-500",
-    features: ["Chaîne d'approvisionnement", "Optimisation des stocks", "Livraison just-in-time"]
-  },
-  {
-    icon: FileText,
-    title: "Maintenance technique",
-    description: "Service complet de maintenance avec intervention rapide via abonnement.",
-    color: "from-indigo-500 to-blue-500",
-    features: ["Maintenance préventive", "Intervention 24/7", "Suivi numérique"]
+    features: ["Maintenance planifiée", "Audit et diagnostic", "Réhabilitation", "Plan patrimonial"]
   },
 ];
 
@@ -85,23 +64,22 @@ export default function ServicesModernSimple() {
         <div className="text-center max-w-4xl mx-auto mb-16">
           <div className="mb-6">
             <span className="text-sm font-semibold tracking-widest text-primary uppercase">
-              Expertise Dédiée
+              Gestion intégrale
             </span>
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold mb-6">
-            Des Solutions{" "}
+            Un Accompagnement{" "}
             <span className="relative inline-block">
-              <span className="gradient-text">Sur Mesure</span>
+              <span className="gradient-text">À Chaque Étape</span>
               <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary rounded-full" />
             </span>{" "}
-            Pour Chaque Projet
+            De Votre Projet
           </h2>
           
           <p className="text-xl text-muted-foreground mt-6 leading-relaxed">
-            Nous fournissons une gamme complète de services pour donner vie à votre vision, 
-            avec une expertise qui couvre{" "}
-            <span className="text-primary font-semibold">chaque phase</span> de votre projet.
+            De l’idée à l’exploitation du patrimoine, nos trois pôles couvrent{" "}
+            <span className="text-primary font-semibold">tout le cycle de vie</span> de votre projet de construction.
           </p>
         </div>
 
@@ -192,11 +170,14 @@ export default function ServicesModernSimple() {
                   <div className="relative overflow-hidden rounded-xl">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <Button
+                      asChild
                       variant="ghost"
                       className="w-full justify-between group/btn relative z-10"
                     >
-                      <span className="text-sm font-medium">Découvrir ce service</span>
-                      <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                      <Link href="/services">
+                        <span className="text-sm font-medium">Découvrir ce pôle</span>
+                        <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </Link>
                     </Button>
                   </div>
                 </CardContent>
