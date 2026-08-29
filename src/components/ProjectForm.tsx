@@ -1,9 +1,8 @@
 
 "use client";
 
-import { useEffect, useRef } from "react";
+import { startTransition, useEffect, useRef } from "react";
 import { useActionState } from "react";
-import { useFormStatus } from "react-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
@@ -46,8 +45,7 @@ const servicesList = [
     { id: "other", label: "Autre" },
 ];
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
+function SubmitButton({ pending }: { pending: boolean }) {
   return (
     <Button type="submit" disabled={pending} className="w-full text-lg py-6 mt-8">
       {pending ? (
@@ -65,7 +63,7 @@ function SubmitButton() {
 export default function ProjectForm() {
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
-  const [state, formAction] = useActionState(submitProjectForm, {
+  const [state, formAction, isPending] = useActionState(submitProjectForm, {
     message: "",
     status: "idle",
   });
@@ -122,45 +120,31 @@ export default function ProjectForm() {
     }
   }, [state, form, toast]);
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    
-    // Valider le formulaire avec react-hook-form
-    const isValid = await form.trigger();
-    if (!isValid) {
-      return;
-    }
-    
+  const onSubmit = (values: ProjectFormData) => {
     const formData = new FormData();
-    const values = form.getValues();
-    
-    // Ajouter tous les champs au FormData
+
     Object.entries(values).forEach(([key, value]) => {
       if (key === 'planFile' || key === 'otherFile') {
-        // Les fichiers sont déjà des File objects
         if (value instanceof File) {
           formData.append(key, value);
         }
       } else if (key === 'services') {
-        // Pour les services (array), ajouter chaque élément
-        if (Array.isArray(value) && value.length > 0) {
+        if (Array.isArray(value)) {
           value.forEach((service) => {
             formData.append('services', service);
           });
         }
       } else {
-        // Pour les autres champs, inclure même les valeurs vides pour les champs optionnels
         if (value !== undefined && value !== null) {
           formData.append(key, String(value));
-        } else if (key === 'area' || key === 'rooms') {
-          // Les champs area et rooms peuvent être vides
-          formData.append(key, '');
         }
       }
     });
-    
-    // Soumettre le formulaire avec le FormData
-    formAction(formData);
+
+    // Une action déclenchée manuellement doit rester dans une transition React.
+    startTransition(() => {
+      formAction(formData);
+    });
   };
 
   return (
@@ -169,7 +153,7 @@ export default function ProjectForm() {
         <Form {...form}>
           <form
             ref={formRef}
-            onSubmit={onSubmit}
+            onSubmit={form.handleSubmit(onSubmit)}
             className="space-y-8"
           >
             <fieldset>
@@ -340,7 +324,7 @@ export default function ProjectForm() {
                  <FormField control={form.control} name="notes" render={({ field }) => ( <FormItem><FormLabel>Remarques ou besoins spécifiques</FormLabel><FormControl><Textarea className="min-h-[120px]" {...field} /></FormControl><FormMessage /></FormItem> )} />
             </fieldset>
 
-            <SubmitButton />
+            <SubmitButton pending={isPending} />
           </form>
         </Form>
       </CardContent>
