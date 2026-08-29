@@ -2,6 +2,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -29,7 +30,9 @@ const NAV_LINKS = [
 
 export default function Header() {
   const isMobile = useIsMobile();
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,6 +41,10 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
 
   const NavMenu = ({ isMobileMenu = false }) => (
     <nav
@@ -64,9 +71,17 @@ export default function Header() {
       )}
       <div className={`flex items-center gap-4 ${isMobileMenu ? 'mt-4' : 'ml-4'}`}>
         <ThemeToggle />
-        <Button asChild>
-          <Link href="/commencer-un-projet">Commencer un Projet</Link>
-        </Button>
+        {isMobileMenu ? (
+          <SheetClose asChild>
+            <Button asChild>
+              <Link href="/commencer-un-projet">Commencer un Projet</Link>
+            </Button>
+          </SheetClose>
+        ) : (
+          <Button asChild>
+            <Link href="/commencer-un-projet">Commencer un Projet</Link>
+          </Button>
+        )}
       </div>
     </nav>
   );
@@ -84,7 +99,7 @@ export default function Header() {
         {isMobile === undefined ? (
           <div className="h-10 w-48 rounded-md animate-pulse bg-muted/20"></div>
         ) : isMobile ? (
-          <Sheet>
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
