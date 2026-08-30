@@ -1,9 +1,8 @@
 
 "use client";
 
-import { useEffect, useRef } from "react";
+import { startTransition, useEffect, useRef } from "react";
 import { useActionState } from "react";
-import { useFormStatus } from "react-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
@@ -30,8 +29,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
+function SubmitButton({ pending }: { pending: boolean }) {
   return (
     <Button type="submit" disabled={pending} className="w-full text-lg py-6 mt-8">
       {pending ? (
@@ -49,7 +47,7 @@ function SubmitButton() {
 export default function PartnerForm() {
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
-  const [state, formAction] = useActionState(submitPartnerForm, {
+  const [state, formAction, isPending] = useActionState(submitPartnerForm, {
     message: "",
     status: "idle",
   });
@@ -97,11 +95,32 @@ export default function PartnerForm() {
     }
   }, [state, form, toast]);
 
+  const onSubmit = (values: PartnerFormData) => {
+    const formData = new FormData();
+
+    Object.entries(values).forEach(([key, value]) => {
+      if (key === "coverLetter") {
+        if (value instanceof File) {
+          formData.append(key, value);
+        }
+        return;
+      }
+
+      if (value !== undefined && value !== null) {
+        formData.append(key, String(value));
+      }
+    });
+
+    startTransition(() => {
+      formAction(formData);
+    });
+  };
+
   return (
     <Form {...form}>
       <form
         ref={formRef}
-        action={formAction}
+        onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-6"
       >
         <fieldset>
@@ -143,7 +162,7 @@ export default function PartnerForm() {
           </div>
         </fieldset>
 
-        <SubmitButton />
+        <SubmitButton pending={isPending} />
       </form>
     </Form>
   );
